@@ -133,7 +133,11 @@ public class MainActivity extends AppCompatActivity {
             valueOne = Float.parseFloat((String) text.getText());
         });
 
-        btnMs.setOnClickListener(v -> memory = Float.parseFloat((String) text.getText()));
+        btnMs.setOnClickListener(v -> {
+                try {
+                    memory = Float.parseFloat((String) text.getText());
+                } catch (NumberFormatException ignored) {}
+        });
 
         btnMc.setOnClickListener(v -> memory = null);
 
